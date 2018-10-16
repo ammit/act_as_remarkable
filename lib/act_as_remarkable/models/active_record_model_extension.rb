@@ -8,9 +8,12 @@ module ActAsRemarkable
 
         accepts_nested_attributes_for :remarks, allow_destroy: true
 
-        after_initialize do |record|
-          record.remarks.build if record.remarks.count <= 0
-        end
+        # Removed
+        # As casuing n+1 query
+
+        # after_initialize do |record|
+        #   record.remarks.build if record.remarks.count <= 0
+        # end
       end
     end
   end
